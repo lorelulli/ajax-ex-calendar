@@ -12,16 +12,32 @@ $(document).ready(function () {
     var numeroMese = dataIniziale.format('M');
 
     $('.mese-succ').click(function () {
-        dataIniziale.add(1, 'month');
-        stampaGiorniMese(dataIniziale);
         var numeroMese = dataIniziale.format('M');
-        console.log(numeroMese);
-        stampaFestivi()
+        if (numeroMese != 12) {
+
+            dataIniziale.add(1, 'month');
+            stampaGiorniMese(dataIniziale);
+
+            console.log(numeroMese);
+            stampaFestivi()
+
+        }
+        else {
+            alert('puoi andare solo dietro')
+
+        }
     });
     $('.mese-prec').click(function () {
-        dataIniziale.subtract(1, 'month');
-        stampaGiorniMese(dataIniziale);
-        stampaFestivi()
+        var numeroMese = dataIniziale.format('M');
+        if (numeroMese != 1) {
+            dataIniziale.subtract(1, 'month');
+            stampaGiorniMese(dataIniziale);
+            stampaFestivi()
+
+        }
+        else {
+            alert('puoi solo andare avanti')
+        }
     });
 
 
