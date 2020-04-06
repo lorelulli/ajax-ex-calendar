@@ -1,9 +1,10 @@
 .top-calendar,
 .main-calendar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 #calendar li,
@@ -13,4 +14,10 @@
 
 .festivo {
     color: red;
+}
+
+.square{
+    width: calc(100% / 7);
+    height: 60px;
+    border: solid black 1px;
 }
